@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Problem List
+{% endblock %}
+
+{% block content %}
+<div class="problem-list">
+    {% for problem in problems %}
+    <div class="problem-item">
+        <div class="problem-title">
+            <strong>{{ problem.name }}</strong>
+        </div>
+        <div class="problem-category">
+            {{ problem.category }} <span class="badge bg-secondary">{{ problem.difficulty }}</span>
+        </div>
+        <div class="problem-details">
+            {{ problem.description }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
